@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Art Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to the external CSS file -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Linktree</title>
+    <style>
+           body {
+      font-family: 'custom font' 'calist' src: url(https://www.dafontfree.net/calisto-mt-regular/f117066.htm)  'Arial Narrow', Arial, sans-serif, franlin Gothic Medium;
+            text-align: center;
+            padding: 20px;
+            background-image: url('sparkle.gif'); /* Background for whitespace */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+    .container {
+      max-width: 20000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .image-wall {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 30px;
+      background-color: #transparent;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    }
+
+    .image-wall img {
+      max-width: 800px;
+      max-height: 800px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 0px;
+      transition: transform 0.5s ease;
+    }
+
+    .image-wall img:hover {
+      transform: scale(1.1);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-home">Back to Home</a>
+
+  <div class="container">
+    <h2>My Price</h2>
+    <p>Explore a collection of my artwork. WARNING SOME IMAGES MAY CONTAIN GORE OR ADULT THEMES</p>
+    <div class="image-wall">
+      <img src="images/Commission_Price_Sheet_Twainezs.png" alt="Painting 1" onclick="openLightbox('images/Commission_Price_Sheet_Twainezs.png')">
+
+  </div>
+
+  <div class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-image" src="" alt="Lightbox Image">
+  </div>
+
+  <script>
+    function openLightbox(imageUrl) {
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = imageUrl;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.querySelector('.lightbox');
+      lightbox.classList.remove('active');
+    }
+  </script>
+</body>
+
+</html>
